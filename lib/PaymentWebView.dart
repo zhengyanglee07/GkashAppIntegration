@@ -22,11 +22,6 @@ class _PaymentWebViewState extends State<PaymentWebView> {
   Widget build(BuildContext context) {
     return Container(
         child: Column(children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(20.0),
-            child: Text(
-                "CURRENT URL\n$url", style: TextStyle(fontSize: 15.0)),
-          ),
       Container(
           padding: EdgeInsets.all(10.0),
           child: progress < 1.0
@@ -92,7 +87,7 @@ class _PaymentWebViewState extends State<PaymentWebView> {
         ),
       ),
       RaisedButton(
-              child: Icon(Icons.home),
+              child: Text("Return To Merchant"),
               onPressed: () {
 				          Navigator.pop(context, url);
               },
