@@ -86,12 +86,15 @@ class _PaymentWebViewState extends State<PaymentWebView> {
           ),
         ),
       ),
-      RaisedButton(
+	  Container(
+		width: double.infinity,
+		child: RaisedButton(
               child: Text("Return To Merchant"),
               onPressed: () {
 				          Navigator.pop(context, url);
               },
             ),
+	  ),
     ]));
     
   }

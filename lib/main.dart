@@ -51,7 +51,6 @@ class _PaymentPageState extends State<PaymentPage> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               TextFormField(
-                  autofocus: true,
                   controller: _amountController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
@@ -79,12 +78,15 @@ class _PaymentPageState extends State<PaymentPage> {
                             String signatureKey = 'oAhVwtUxfrop4cI';
                             String cartID = new DateFormat('yyyyMMddHHmmss')
                                 .format(DateTime.now());
+							
+							String amount = double.parse(_amountController.text).toStringAsFixed(2);
+							
 
                             final paymentRequest = PaymentRequest(
-                                version,
+								version,
                                 cid,
                                 currency,
-                                _amountController.text,
+                                amount,
                                 cartID,
                                 signatureKey,
                                 callbackurl:
